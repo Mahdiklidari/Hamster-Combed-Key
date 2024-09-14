@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.grid-container').style.display = 'none';
         keyCountGroup.style.display = 'none';
 
-        keyCountLabel.innerText = `Number of keys: ${keyCount}`;
+        keyCountLabel.innerText = `تعداد کلید: ${keyCount}`;
 
         progressBar.style.width = '0%';
         progressText.innerText = '0%';
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             for (let i = 0; i < game.attempts; i++) {
                 const hasCode = await emulateProgress(clientToken, game.promoId);
-                updateProgress((100 / game.attempts) / keyCount, `Emulating progress ${i + 1}/${game.attempts}...`);
+                updateProgress((100 / game.attempts) / keyCount, `تقلید از پیشرفت ${i + 1}/${game.attempts}...`);
                 if (hasCode) {
                     break;
                 }
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 const key = await generateKey(clientToken, game.promoId);
-                updateProgress(100 / keyCount, 'Generating key...');
+                updateProgress(100 / keyCount, 'در حال تولید کلید...');
                 return key;
             } catch (error) {
                 alert(`Failed to generate key: ${error.message}`);
@@ -263,7 +263,8 @@ document.addEventListener('DOMContentLoaded', () => {
             keysList.innerHTML = keys.filter(key => key).map(key =>
                 `<div class="key-item">
                     <input type="text" value="${key}" readonly>
-                    <button class="copyKeyBtn" data-key="${key}">Copy Key</button>
+                    <button class="copyKeyBtn" data-key="${key}">کپی کد
+                    </button>
                 </div>`
             ).join('');
             copyAllBtn.classList.remove('hidden');
@@ -271,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
             keysList.innerHTML =
                 `<div class="key-item">
                     <input type="text" value="${keys[0]}" readonly>
-                    <button class="copyKeyBtn" data-key="${keys[0]}">Copy Key</button>
+                    <button class="copyKeyBtn" data-key="${keys[0]}">کپی کد</button>
                 </div>`;
         }
 
@@ -292,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         progressBar.style.width = '100%';
         progressText.innerText = '100%';
-        progressLog.innerText = 'Complete';
+        progressLog.innerText = 'کامل';
 
         startBtn.classList.remove('hidden');
         keyCountGroup.classList.remove('hidden');
@@ -362,7 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (!response.ok) {
-            throw new Error('Failed to generate key');
+            throw new Error('کلید تولید نشد ، سرور فیلترشکن خود را عوض کنید و دوباره امتحان کنید');
         }
 
         const data = await response.json();
@@ -384,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 copyStatus.classList.remove('hidden');
                 setTimeout(() => copyStatus.classList.add('hidden'), 2000);
             }).catch(err => {
-                console.error('Failed to copy text: ', err);
+                console.error('متن کپی نشد: ', err);
             });
         } else {
             const textArea = document.createElement('textarea');
@@ -403,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => copyStatus.classList.add('hidden'), 2000);
                 }
             } catch (err) {
-                console.error('Fallback: Oops, unable to copy', err);
+                console.error('بازگشت مجدد: اوه، امکان کپی وجود ندارد', err);
             }
 
             document.body.removeChild(textArea);
