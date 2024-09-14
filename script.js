@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedGame = null;
 
     sourceCode.addEventListener('click', () => {
-        window.open('');
+        window.open('https://t.me/+VmAOJ94rwbkzNzk0');
     });
 
     gameOptions.forEach(option => {
