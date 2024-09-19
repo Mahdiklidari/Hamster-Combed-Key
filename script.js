@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setTheme);
 
 document.addEventListener('DOMContentLoaded', () => {
-      const games = {
+    const games = {
         1: {
             name: 'Riding Extreme 3D',
             appToken: 'd28721be-fd2d-4b45-869e-9f253b554e50',
@@ -175,8 +175,16 @@ document.addEventListener('DOMContentLoaded', () => {
             promoId: 'daab8f83-8ea2-4ad0-8dd5-d33363129640',
             timing: 20000, // 30 seconds
             attempts: 30,
+        },
+        20: {
+            name: 'Factory World',
+            appToken: 'd02fc404-8985-4305-87d8-32bd4e66bb16',
+            promoId: 'd02fc404-8985-4305-87d8-32bd4e66bb16',
+            timing: 20000, // 30 seconds
+            attempts: 30,
         }
     };
+
     const gameOptions = document.querySelectorAll('.game-option');
     const keyCountGroup = document.getElementById('keyCountGroup');
     const keyRange = document.getElementById('keyRange');
@@ -222,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startBtn.addEventListener('click', async () => {
         const keyCount = parseInt(keyRange.value);
         if (!selectedGame) {
-            alert('Please select a game first.');
+            alert('لطفا ابتدا یک بازی را انتخاب کنید.');
             return;
         }
 
@@ -233,11 +241,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.grid-container').style.display = 'none';
         keyCountGroup.style.display = 'none';
 
-        keyCountLabel.innerText = `تعداد کلید: ${keyCount}`;
+        keyCountLabel.innerText = `تعداد کلیدها: ${keyCount}`;
 
         progressBar.style.width = '0%';
         progressText.innerText = '0%';
-        progressLog.innerText = 'شروع...';
+        progressLog.innerText = 'شروع کردن...';
         progressContainer.classList.remove('hidden');
         keyContainer.classList.add('hidden');
         generatedKeysTitle.classList.add('hidden');
@@ -267,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             for (let i = 0; i < game.attempts; i++) {
                 const hasCode = await emulateProgress(clientToken, game.promoId);
-                updateProgress((100 / game.attempts) / keyCount, `تقلید از پیشرفت ${i + 1}/${game.attempts}...`);
+                updateProgress((100 / game.attempts) / keyCount, `Emulating progress ${i + 1}/${game.attempts}...`);
                 if (hasCode) {
                     break;
                 }
@@ -276,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 const key = await generateKey(clientToken, game.promoId);
-                updateProgress(100 / keyCount, 'در حال تولید کلید...');
+                updateProgress(100 / keyCount, 'تولید کلید...');
                 return key;
             } catch (error) {
                 alert(`Failed to generate key: ${error.message}`);
@@ -290,8 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
             keysList.innerHTML = keys.filter(key => key).map(key =>
                 `<div class="key-item">
                     <input type="text" value="${key}" readonly>
-                    <button class="copyKeyBtn" data-key="${key}">کپی کد
-                    </button>
+                    <button class="copyKeyBtn" data-key="${key}">کپی کلید</button>
                 </div>`
             ).join('');
             copyAllBtn.classList.remove('hidden');
@@ -299,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
             keysList.innerHTML =
                 `<div class="key-item">
                     <input type="text" value="${keys[0]}" readonly>
-                    <button class="copyKeyBtn" data-key="${keys[0]}">کپی کد</button>
+                    <button class="copyKeyBtn" data-key="${keys[0]}">Copy Key</button>
                 </div>`;
         }
 
@@ -348,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (!response.ok) {
-            throw new Error('Failed to login');
+            throw new Error('ورود ناموفق بود');
         }
 
         const data = await response.json();
@@ -390,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (!response.ok) {
-            throw new Error('کلید تولید نشد ، سرور فیلترشکن خود را عوض کنید و دوباره امتحان کنید');
+            throw new Error('کلید تولید نشد فیلترشکن خود رو عوض کنید و دوباره امتحان کنید');
         }
 
         const data = await response.json();
@@ -425,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
             textArea.select();
 
             try {
-                const successful = document.execCommand('copy');
+                const successful = document.execCommand('کپی کنید');
                 if (successful) {
                     copyStatus.classList.remove('hidden');
                     setTimeout(() => copyStatus.classList.add('hidden'), 2000);
