@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setTheme);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const games = {
+     const games = {
         1: {
             name: 'Riding Extreme 3D',
             appToken: 'd28721be-fd2d-4b45-869e-9f253b554e50',
@@ -159,6 +159,13 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Count Masters',
             appToken: '4bdc17da-2601-449b-948e-f8c7bd376553',
             promoId: '4bdc17da-2601-449b-948e-f8c7bd376553',
+            timing: 20000, // 30 seconds
+            attempts: 30,
+        },
+        18: {
+            name: 'Infected Frontier',
+            appToken: 'eb518c4b-e448-4065-9d33-06f3039f0fcb',
+            promoId: 'eb518c4b-e448-4065-9d33-06f3039f0fcb',
             timing: 20000, // 30 seconds
             attempts: 30,
         }
