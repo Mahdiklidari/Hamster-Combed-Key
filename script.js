@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setTheme);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const games = {
+  const games = {
         1: {
             name: 'Riding Extreme 3D',
             appToken: 'd28721be-fd2d-4b45-869e-9f253b554e50',
@@ -184,7 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
             attempts: 30,
         }
     };
-
     const gameOptions = document.querySelectorAll('.game-option');
     const keyCountGroup = document.getElementById('keyCountGroup');
     const keyRange = document.getElementById('keyRange');
