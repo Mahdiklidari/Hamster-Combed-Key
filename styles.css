@@ -9,10 +9,9 @@ body {
 
 /* استایل هدر */
 header {
-    background-color: #4CAF50;
-    padding: 20px 0;
+    background-color: #fff;
+    padding: 10px 0;
     text-align: center;
-    color: white;
 }
 
 .container {
@@ -32,62 +31,64 @@ header {
     flex: 1;
     padding: 10px;
     font-size: 16px;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.city-select,
-.category-select {
+.city-select {
     padding: 10px;
     font-size: 16px;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+/* استایل دسته بندی‌ها */
+.categories {
     background-color: #fff;
+    padding: 20px 0;
+}
+
+.category-item {
+    display: inline-block;
+    width: 23%;
+    margin: 1%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    font-size: 14px;
 }
 
 /* استایل فوتر */
 footer {
     background-color: #333;
+    padding: 10px 0;
     color: white;
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
 }
 
 .footer-container {
     display: flex;
     justify-content: space-around;
-    width: 90%;
-    max-width: 1200px;
 }
 
-.footer-section {
-    text-align: center;
-}
-
-.footer-section a {
+.footer-container a {
     color: white;
     text-decoration: none;
     font-size: 18px;
 }
 
-.footer-section a:hover {
+.footer-container a:hover {
     text-decoration: underline;
 }
 
-/* تنظیمات واکنش‌گرا */
+/* واکنش‌گرا */
 @media (max-width: 768px) {
-    .search-container {
-        flex-direction: column;
-        align-items: flex-start;
+    .category-item {
+        width: 48%;
     }
-
     .footer-container {
         flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-section {
-        margin-bottom: 10px;
+        text-align: center;
     }
 }
