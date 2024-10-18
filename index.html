@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سایت ثبت آگهی حرفه‌ای</title>
+    <title>سایت ثبت آگهی</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- هدر صفحه با نوار جستجو، انتخاب شهر و دسته بندی -->
+    <!-- نوار جستجو و انتخاب شهر -->
     <header>
         <div class="container">
             <div class="search-container">
-                <input type="text" placeholder="جستجو..." class="search-bar">
+                <input type="text" placeholder="جستجو در همه آگهی‌ها..." class="search-bar">
                 <select class="city-select">
                     <option value="" disabled selected>انتخاب شهر</option>
                     <option value="تهران">تهران</option>
@@ -20,29 +20,30 @@
                     <option value="شیراز">شیراز</option>
                     <option value="تبریز">تبریز</option>
                 </select>
-                <select class="category-select">
-                    <option value="همه">همه دسته‌ها</option>
-                    <option value="خودرو">خودرو</option>
-                    <option value="املاک">املاک</option>
-                    <option value="لوازم الکترونیک">لوازم الکترونیک</option>
-                    <option value="خدمات">خدمات</option>
-                </select>
             </div>
         </div>
     </header>
 
-    <!-- فوتر صفحه با سه بخش به صورت افقی -->
+    <!-- دسته بندی‌ها -->
+    <section class="categories">
+        <div class="container">
+            <div class="category-item">خانه و آشپزخانه</div>
+            <div class="category-item">کالای دیجیتال</div>
+            <div class="category-item">وسایل نقلیه</div>
+            <div class="category-item">املاک</div>
+            <div class="category-item">اجتماعی</div>
+            <div class="category-item">سرگرمی و فراغت</div>
+            <div class="category-item">وسایل شخصی</div>
+            <div class="category-item">خدمات</div>
+        </div>
+    </section>
+
+    <!-- فوتر با سه بخش -->
     <footer>
         <div class="footer-container">
-            <div class="footer-section">
-                <a href="#">ثبت‌نام کاربر</a>
-            </div>
-            <div class="footer-section">
-                <a href="#">خانه</a>
-            </div>
-            <div class="footer-section">
-                <a href="#">ثبت آگهی</a>
-            </div>
+            <a href="#">👨‍💼 دیوار من</a>
+            <a href="#">📁 ثبت آگهی</a>
+            <a href="#">🏠 دسته‌ها</a>
         </div>
     </footer>
 </body>
