@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- هدر صفحه با نوار جستجو و انتخاب شهر -->
+    <!-- هدر صفحه با نوار جستجو، انتخاب شهر و دسته بندی -->
     <header>
         <div class="container">
             <div class="search-container">
@@ -19,19 +19,8 @@
                     <option value="اصفهان">اصفهان</option>
                     <option value="شیراز">شیراز</option>
                     <option value="تبریز">تبریز</option>
-                    <!-- سایر شهرها -->
                 </select>
-            </div>
-        </div>
-    </header>
-
-    <!-- بخش فیلتر آگهی‌ها -->
-    <section class="filters">
-        <div class="container">
-            <h2>فیلتر کردن آگهی‌ها</h2>
-            <div class="filter-options">
-                <label for="category">دسته‌بندی:</label>
-                <select id="category">
+                <select class="category-select">
                     <option value="همه">همه دسته‌ها</option>
                     <option value="خودرو">خودرو</option>
                     <option value="املاک">املاک</option>
@@ -40,9 +29,9 @@
                 </select>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- فوتر صفحه با سه بخش -->
+    <!-- فوتر صفحه با سه بخش به صورت افقی -->
     <footer>
         <div class="footer-container">
             <div class="footer-section">
