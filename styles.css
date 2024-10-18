@@ -9,9 +9,10 @@ body {
 
 /* استایل هدر */
 header {
-    background-color: #fff;
-    padding: 10px 0;
+    background-color: #4CAF50;
+    padding: 20px 0;
     text-align: center;
+    color: white;
 }
 
 .container {
@@ -31,64 +32,63 @@ header {
     flex: 1;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 5px;
 }
 
-.city-select {
+.city-select,
+.category-select {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 5px;
-}
-
-/* استایل دسته بندی‌ها */
-.categories {
     background-color: #fff;
-    padding: 20px 0;
-}
-
-.category-item {
-    display: inline-block;
-    width: 23%;
-    margin: 1%;
-    padding: 10px;
-    background-color: #f9f9f9;
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid #eee;
-    font-size: 14px;
 }
 
 /* استایل فوتر */
 footer {
     background-color: #333;
-    padding: 10px 0;
     color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 600px;  /* محدود کردن عرض فوتر */
 }
 
-.footer-container a {
+.footer-section {
+    text-align: center;
+    flex: 1;
+}
+
+.footer-section a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
 }
 
-.footer-container a:hover {
+.footer-section a:hover {
     text-decoration: underline;
 }
 
-/* واکنش‌گرا */
+/* تنظیمات واکنش‌گرا */
 @media (max-width: 768px) {
-    .category-item {
-        width: 48%;
+    .search-container {
+        flex-direction: column;
+        align-items: flex-start;
     }
+
     .footer-container {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 10px;
     }
 }
