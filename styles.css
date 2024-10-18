@@ -7,23 +7,29 @@ body {
     background-color: #f0f0f0;
 }
 
+/* استایل هدر */
 header {
     background-color: #4CAF50;
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
     color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .search-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
-    max-width: 600px;
+    gap: 10px;
 }
 
 .search-bar {
-    width: 70%;
+    flex: 1;
     padding: 10px;
     font-size: 16px;
     border: none;
@@ -38,35 +44,41 @@ header {
     background-color: #fff;
 }
 
+/* استایل بخش فیلتر آگهی‌ها */
 .filters {
     background-color: #fff;
-    margin: 20px auto;
     padding: 20px;
-    max-width: 600px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.filters h2 {
-    margin-bottom: 10px;
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .filters select {
-    width: 100%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+/* استایل فوتر */
 footer {
     background-color: #333;
     color: white;
     padding: 20px 0;
     display: flex;
-    justify-content: space-around;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    justify-content: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
 }
 
 .footer-section {
@@ -82,4 +94,21 @@ footer {
 
 .footer-section a:hover {
     text-decoration: underline;
+}
+
+/* تنظیمات واکنش‌گرا */
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 10px;
+    }
 }
