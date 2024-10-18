@@ -3,51 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سایت ثبت آگهی</title>
+    <title>سایت ثبت آگهی حرفه‌ای</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- بخش جستجو و انتخاب شهر -->
+    <!-- هدر صفحه با نوار جستجو و انتخاب شهر -->
     <header>
-        <div class="search-container">
-            <input type="text" placeholder="جستجو..." class="search-bar">
-            <select class="city-select">
-                <option value="" disabled selected>انتخاب شهر</option>
-                <option value="تهران">تهران</option>
-                <option value="مشهد">مشهد</option>
-                <option value="اصفهان">اصفهان</option>
-                <option value="شیراز">شیراز</option>
-                <option value="تبریز">تبریز</option>
-                <!-- می‌توانید شهرهای دیگر ایران را اضافه کنید -->
-            </select>
+        <div class="container">
+            <div class="search-container">
+                <input type="text" placeholder="جستجو..." class="search-bar">
+                <select class="city-select">
+                    <option value="" disabled selected>انتخاب شهر</option>
+                    <option value="تهران">تهران</option>
+                    <option value="مشهد">مشهد</option>
+                    <option value="اصفهان">اصفهان</option>
+                    <option value="شیراز">شیراز</option>
+                    <option value="تبریز">تبریز</option>
+                    <!-- سایر شهرها -->
+                </select>
+            </div>
         </div>
     </header>
 
-    <!-- بخش فیلتر آگهی ها -->
+    <!-- بخش فیلتر آگهی‌ها -->
     <section class="filters">
-        <h2>فیلتر کردن آگهی‌ها</h2>
-        <label for="category">دسته‌بندی:</label>
-        <select id="category">
-            <option value="همه">همه دسته‌ها</option>
-            <option value="خودرو">خودرو</option>
-            <option value="املاک">املاک</option>
-            <option value="لوازم الکترونیک">لوازم الکترونیک</option>
-            <option value="خدمات">خدمات</option>
-        </select>
+        <div class="container">
+            <h2>فیلتر کردن آگهی‌ها</h2>
+            <div class="filter-options">
+                <label for="category">دسته‌بندی:</label>
+                <select id="category">
+                    <option value="همه">همه دسته‌ها</option>
+                    <option value="خودرو">خودرو</option>
+                    <option value="املاک">املاک</option>
+                    <option value="لوازم الکترونیک">لوازم الکترونیک</option>
+                    <option value="خدمات">خدمات</option>
+                </select>
+            </div>
+        </div>
     </section>
 
-    <!-- بخش پایین صفحه -->
+    <!-- فوتر صفحه با سه بخش -->
     <footer>
-        <div class="footer-section" id="register">
-            <a href="#">ثبت‌نام کاربر</a>
-        </div>
-        <div class="footer-section" id="home">
-            <a href="#">خانه</a>
-        </div>
-        <div class="footer-section" id="post-ad">
-            <a href="#">ثبت آگهی</a>
+        <div class="footer-container">
+            <div class="footer-section">
+                <a href="#">ثبت‌نام کاربر</a>
+            </div>
+            <div class="footer-section">
+                <a href="#">خانه</a>
+            </div>
+            <div class="footer-section">
+                <a href="#">ثبت آگهی</a>
+            </div>
         </div>
     </footer>
-
 </body>
 </html>
